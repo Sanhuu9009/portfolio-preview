@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-12T06:57:04.000Z",
+  "updatedAt": "2026-11-12T06:59:22.000Z",
   "site": {
     "title": "党文龙 Aetheris · 作品集",
     "description": "党文龙（Aetheris）的个人作品集：纪录短片、图文专题与文字作品，以及获奖与实践经历。",
@@ -278,29 +278,6 @@
       "platform": "西北大学现代学院融媒体中心公众号",
       "links": [],
       "awards": []
-    },
-    {
-      "id": "copy-collection",
-      "title": "地铁灯箱文案合集",
-      "type": "text",
-      "category": "广告文案",
-      "date": "2025-07",
-      "summary": "实习期间为一家书店写的 6 条地铁灯箱文案，最终投放 3 条。",
-      "cover": "",
-      "tags": [
-        "文案",
-        "实习"
-      ],
-      "featured": false,
-      "hidden": false,
-      "video": {},
-      "body": "**一**\n下一站是终点，\n这本书还剩一半。\n\n**二**\n地铁不等人，\n但书会。\n\n**三**\n你低头看手机的时候，\n有人低头看了一整个世界。",
-      "gallery": [],
-      "role": "文案",
-      "collaborators": "",
-      "platform": "上海地铁 2 号线",
-      "links": [],
-      "awards": []
     }
   ],
   "honors": [
@@ -349,22 +326,6 @@
         "主导迎新季系列短片，全网播放 50 万+",
         "建立素材库与剪辑规范，交片周期缩短约 30%",
         "带教 12 名新成员完成第一支独立作品"
-      ],
-      "link": "",
-      "hidden": false
-    },
-    {
-      "id": "e-agency",
-      "scope": "external",
-      "org": "示例文化传媒有限公司",
-      "role": "内容策划实习生",
-      "start": "2025-06",
-      "end": "2025-09",
-      "location": "上海",
-      "summary": "参与 3 个品牌客户的社媒内容策划，独立完成一支品牌短片。",
-      "highlights": [
-        "撰写短视频脚本 30+ 条",
-        "负责的账号单月涨粉 1.2 万"
       ],
       "link": "",
       "hidden": false
