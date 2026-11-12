@@ -123,6 +123,12 @@ p { margin: 0; }
 @media (max-width: 420px) { .brand__en { display: none; } }
 .brand__dot { width: 9px; height: 9px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 0 color-mix(in srgb, var(--gold) 70%, transparent); animation: rec 2s infinite; }
 @keyframes rec { 70% { box-shadow: 0 0 0 9px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
+/* 个人 logo：深色主题用白色版，浅色主题用黑色版 */
+.brand__logo { display: block; height: 22px; width: auto; }
+.brand__logo--black { display: none; }
+:root[data-theme="light"] .brand__logo--white { display: none; }
+:root[data-theme="light"] .brand__logo--black { display: block; }
+@media (max-width: 520px) { .brand__logo { height: 18px; } }
 .nav { position: relative; margin-left: auto; display: flex; gap: 2px; padding: 4px; border-radius: 999px; border: 1px solid var(--line); background: color-mix(in srgb, var(--bg) 40%, transparent); }
 .nav a { position: relative; z-index: 1; padding: 6px 15px; border-radius: 999px; font-size: 14.5px; color: var(--ink-2); transition: color .25s; }
 .nav a:hover, .nav a.is-hot { color: var(--ink); }

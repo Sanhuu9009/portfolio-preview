@@ -117,7 +117,7 @@ function renderHeader(data) {
   hd.className = 'hd';
   hd.innerHTML = `
     <div class="wrap hd__in">
-      <a class="brand" href="${href('index.html')}" data-wipe="${esc(name)}" data-magnetic="0.2"><span class="brand__dot" aria-hidden="true"></span><span>${esc(name)}</span>${p.nameEn ? `<span class="brand__en">${esc(p.nameEn)}</span>` : ''}</a>
+      <a class="brand" href="${href('index.html')}" data-wipe="${esc(name)}" data-magnetic="0.2" aria-label="${esc(name)}${p.nameEn ? ` · ${esc(p.nameEn)}` : ''} · 首页"><img class="brand__logo brand__logo--white" src="${esc(assetUrl('assets/img/logo-on-dark.svg'))}" alt="" aria-hidden="true"><img class="brand__logo brand__logo--black" src="${esc(assetUrl('assets/img/logo-on-light.svg'))}" alt="" aria-hidden="true"><span class="sr-only">${esc(name)}${p.nameEn ? ` · ${esc(p.nameEn)}` : ''}</span></a>
       <nav class="nav" id="nav" aria-label="主导航">
         <span class="nav__pill" aria-hidden="true"></span>
         ${links.map(([u, t, , key], i) => `<a href="${u}" data-key="${key}" data-wipe="${t}" data-scramble style="--i:${i}"${key === 'works' && PAGE !== 'home' ? ' aria-current="page"' : ''}>${t}</a>`).join('')}

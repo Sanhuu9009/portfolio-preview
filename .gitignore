@@ -1,3 +1,9 @@
 .DS_Store
 Thumbs.db
 node_modules/
+
+# 站主提供的原始素材（已压好放进 assets/uploads，不入库）
+xinxgiangzhao.jpg
+xingxiangzhao.jpg
+draft.svg
+over-draft.svg
