@@ -58,12 +58,17 @@ export function cursor() {
   const dot = el.children[0];
   const ring = el.children[1];
   const label = ring.firstChild;
-  let mx = -100, my = -100, rx = mx, ry = my, raf = 0, seen = false;
+  let mx = -100, my = -100, rx = mx, ry = my, raf = 0, seen = false, down = false;
+  const paint = () => {
+    // 缩放必须写进 transform：单独的 scale 属性会把它前面的 translate 一起缩放，导致点击时圆环往左上漂移。
+    const s = down ? 0.85 : 1;
+    dot.style.transform = `translate3d(${mx}px,${my}px,0)`;
+    ring.style.transform = `translate3d(${rx}px,${ry}px,0) scale(${s})`;
+  };
   const loop = () => {
     rx = lerp(rx, mx, 0.2);
     ry = lerp(ry, my, 0.2);
-    dot.style.transform = `translate3d(${mx}px,${my}px,0)`;
-    ring.style.transform = `translate3d(${rx}px,${ry}px,0)`;
+    paint();
     raf = Math.abs(rx - mx) + Math.abs(ry - my) > 0.1 ? requestAnimationFrame(loop) : 0;
   };
   addEventListener('pointermove', (e) => {
@@ -83,8 +88,16 @@ export function cursor() {
   });
   document.documentElement.addEventListener('mouseleave', () => el.classList.add('is-hidden'));
   document.documentElement.addEventListener('mouseenter', () => { if (seen) el.classList.remove('is-hidden'); });
-  addEventListener('pointerdown', () => el.classList.add('is-down'));
-  addEventListener('pointerup', () => el.classList.remove('is-down'));
+  addEventListener('pointerdown', () => {
+    if (down) return;
+    down = true; el.classList.add('is-down');
+    if (!raf) raf = requestAnimationFrame(loop); else paint();
+  });
+  addEventListener('pointerup', () => {
+    if (!down) return;
+    down = false; el.classList.remove('is-down');
+    if (!raf) raf = requestAnimationFrame(loop); else paint();
+  });
 }
 
 /* ---------------- 磁吸按钮 data-magnetic="0.3" ---------------- */

@@ -651,7 +651,7 @@ body:has(.hd:not(.is-hidden)) .toolbar.is-stuck { padding-top: calc(var(--hd-h) 
 .cursor.is-label .cursor__ring { width: 88px; height: 88px; margin: -44px 0 0 -44px; background: var(--accent); border-color: var(--accent); }
 .cursor.is-label .cursor__label { opacity: 1; }
 .cursor.is-label .cursor__dot, .cursor.is-hidden .cursor__dot, .cursor.is-hidden .cursor__ring { opacity: 0; }
-.cursor.is-down .cursor__ring { transform-origin: center; scale: .85; }
+/* 按下时的缩小由 fx.js 写进 transform 里：单独的 scale 属性会把它前面的 translate 一起缩放，圆环会往左上漂移 */
 html.has-cursor, html.has-cursor a, html.has-cursor button, html.has-cursor label, html.has-cursor [data-cursor] { cursor: none; }
 html.has-cursor input, html.has-cursor textarea { cursor: text; }
 
