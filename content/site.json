@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-12T14:42:21.000Z",
+  "updatedAt": "2026-11-12T14:57:20.000Z",
   "site": {
     "title": "党文龙 Aetheris · 作品集",
-    "description": "党文龙（Aetheris）的个人作品集：纪录短片、图文专题与文字作品，以及获奖与实践经历。",
+    "description": "党文龙 Aetheris 的作品集：AIGC 影像、纪录片与新媒体内容，聚焦文化遗产与数智国际传播。",
     "favicon": "",
     "accent": "#3ad6c5",
     "footer": "© 2026 党文龙 Aetheris　作品未经许可请勿转载",
@@ -29,19 +29,19 @@
     "name": "党文龙",
     "nameEn": "Aetheris",
     "avatar": "uploads/avatar/aetheris.jpg",
-    "tagline": "用镜头记录城市里不被注意的角落，也用文字留住它们。",
+    "tagline": "数智时代的「文化译影人」：用 AIGC 影像，把中国故事讲给世界听。",
     "roles": [
-      "纪录片导演",
+      "文化译影人",
+      "AIGC 影像",
       "剪辑",
-      "新媒体编辑",
-      "写作者"
+      "新媒体运营"
     ],
     "school": "西北大学现代学院",
     "major": "网络与新媒体",
     "grade": "2025 级本科 · 2029 届",
     "location": "西安",
     "email": "aetherisdang@sanhuu.cn",
-    "bio": "我是网络与新媒体专业的大二学生，主要做纪录短片和图文专题。\n\n大一加入校融媒体中心后，我从扛三脚架的场务做到了视频部部长，三年里参与了 40 多支校园视频的拍摄与剪辑。课外我更喜欢拍普通人：菜市场的摊主、凌晨的环卫工、老小区里修了三十年自行车的师傅。\n\n**我相信好的作品来自足够长时间的在场。** 目前正在跟拍一部关于城市更新中老街坊的纪录片。",
+    "bio": "网络与新媒体专业 2025 级本科生，方向是数智影像国际传播——用 AIGC 影像，把文化遗产讲给更远的人听。\n\n过去一年独立完成 AIGC 短片《额们的地，额们的云》《BEAUTY UNBOXED》《寻迹佛坪》，拿下国家级 B 类影像展的全国单项奖与国 A 类赛事省赛铜奖；带队完成韩城「三下乡」，产出 12 部短片、调研报告与校企合作；在西影电影频道做过剪辑助理，现在是陕西省学联新闻媒体中心实训生。\n\n**工作流：剧本 → 分镜 → AI 生成 → 剪辑。** 抖音 1,793 粉 / B 站 4.9 万播放（截至 2026.10）。",
     "skills": [
       "Premiere Pro",
       "AIGC 创作",
@@ -49,7 +49,9 @@
       "纪录片采访",
       "Workflow",
       "Photoshop",
-      "文案写作"
+      "文案写作",
+      "田野调研",
+      "账号运营"
     ],
     "education": [
       {
@@ -58,7 +60,7 @@
         "degree": "本科",
         "start": "2025-09",
         "end": "2029-06",
-        "note": "GPA 3.8 / 4.0，专业排名前 5%"
+        "note": "班长 · 校学生会组织建设部负责人"
       }
     ],
     "socials": [
@@ -77,128 +79,36 @@
   },
   "works": [
     {
-      "id": "city-folds",
-      "title": "城市褶皱",
+      "id": "e-men-de-di",
+      "title": "《额们的地，额们的云》",
       "type": "video",
-      "category": "纪录短片",
-      "date": "2025-05",
-      "summary": "拆迁前最后一个月，老街上的五户人家。片长 18 分钟。",
-      "cover": "uploads/demo/cover-city.svg",
-      "tags": [
-        "纪录片",
-        "城市更新",
-        "毕业设计"
-      ],
-      "featured": true,
-      "hidden": false,
-      "video": {
-        "input": "BV1GJ411x7h7",
-        "bvid": "BV1GJ411x7h7",
-        "aid": "",
-        "cid": "",
-        "page": 1
-      },
-      "body": "2024 年冬天，学校后面的老街贴出了征收公告。我和两位同学用了一个月，每天早上六点去街口，跟拍了五户人家搬走前的日子。\n\n## 创作过程\n\n- 前期调研 2 周，访谈 17 户居民，最终确定 5 位主人公\n- 拍摄素材约 60 小时，剪辑历时 3 个月\n- 全片不用旁白，只保留人物自己的讲述\n\n> 「房子拆了，人还在，人在街就在。」——开修车铺的周师傅\n\n（示例视频，请在后台替换为你自己的 B 站视频。）",
-      "gallery": [],
-      "role": "导演、摄影、剪辑",
-      "collaborators": "王一然（录音）、陈墨（制片）",
-      "platform": "哔哩哔哩，播放量 12 万",
-      "links": [],
-      "awards": [
-        {
-          "name": "第十二届全国大学生影像创作大赛",
-          "level": "一等奖",
-          "tier": "gold",
-          "rank": "国家级",
-          "issuer": "全国大学生影像创作大赛组委会",
-          "date": "2025-10",
-          "certificate": "uploads/demo/certificate-1.svg",
-          "showTag": true,
-          "showCertificate": true
-        },
-        {
-          "name": "西北大学现代学院毕业影像展",
-          "level": "最佳纪录片",
-          "tier": "merit",
-          "rank": "校级",
-          "issuer": "西北大学现代学院艺术学院",
-          "date": "2025-06",
-          "certificate": "",
-          "showTag": true,
-          "showCertificate": false
-        }
-      ]
-    },
-    {
-      "id": "old-things",
-      "title": "旧物志：宿舍楼里的老物件",
-      "type": "article",
-      "category": "图文专题",
-      "date": "2024-12",
-      "summary": "采访了 12 位同学，拍下他们从家里带来的、舍不得扔的东西。",
-      "cover": "uploads/demo/cover-objects.svg",
-      "tags": [
-        "公众号",
-        "人物",
-        "摄影"
-      ],
-      "featured": true,
-      "hidden": false,
-      "video": {},
-      "body": "这是我在校融媒体公众号做的一期专题，阅读量 2.3 万，被学校官微转载。\n\n![宿舍书桌上的旧台灯](uploads/demo/cover-objects.svg)\n\n## 一盏台灯\n\n小雨的台灯是她外公修过三次的。灯罩的裂缝用胶布缠着，开关要按两下才亮。\n她说：「每次按第二下的时候，都觉得外公在旁边。」\n\n## 一本字典\n\n阿杰的《新华字典》是 1998 年版，扉页上写着他爸爸的名字。",
-      "gallery": [],
-      "role": "策划、采访、摄影、排版",
-      "collaborators": "",
-      "platform": "西北大学现代学院融媒体中心公众号",
-      "links": [
-        {
-          "label": "阅读原文",
-          "url": "https://mp.weixin.qq.com/"
-        }
-      ],
-      "awards": [
-        {
-          "name": "省大学生新媒体创意大赛",
-          "level": "二等奖",
-          "tier": "silver",
-          "rank": "省部级",
-          "issuer": "省教育厅",
-          "date": "2025-04",
-          "certificate": "uploads/demo/certificate-2.svg",
-          "showTag": true,
-          "showCertificate": true
-        }
-      ]
-    },
-    {
-      "id": "last-bus",
-      "title": "夏天的最后一班公交",
-      "type": "text",
-      "category": "散文",
-      "date": "2024-08",
-      "summary": "在 46 路末班车上坐到终点，一个关于告别的晚上。",
+      "category": "AIGC 短片",
+      "date": "2026-06",
+      "summary": "约 3 分钟 AIGC 短片，独立完成，获新西部大学生青年影像展「AIGC 最佳叙事影像」。",
       "cover": "",
       "tags": [
-        "散文",
-        "城市"
+        "AIGC",
+        "短片",
+        "国际传播",
+        "乡村振兴"
       ],
       "featured": true,
       "hidden": false,
       "video": {},
-      "body": "46 路的末班车是十点四十分。\n\n我在这条线路上坐了三年，从来没有坐到过终点。那天晚上，司机师傅在倒数第二站回头看我，问：「小姑娘，终点站什么也没有，你确定吗？」\n\n我说确定。\n\n车窗外的路灯一盏一盏往后退，像是有人在把一整个夏天慢慢收起来。终点站真的什么也没有，只有一个调度室，一棵很大的香樟，和一只趴在台阶上的黄狗。\n\n师傅下车抽烟，说他明天就退休了。\n\n「开了二十六年，」他说，「最后一趟，拉了一个不下车的人。」\n\n---\n\n后来我常常想起那个晚上。我们总以为告别需要一个仪式，其实大多数告别只是：车到站了，灯关了，有人说了一句「回去吧」。",
+      "body": "《额们的地，额们的云》是一支约 3 分钟的 AIGC 短片，从剧本、分镜到 AI 生成与剪辑由我独立完成。\n\n作品投递新西部大学生青年影像展——由共青团陕西省委指导、中国教育电视协会支持的全国性影像赛事。2026 年 6 月获「AIGC 最佳叙事影像」奖；评委由北电、中传、上戏等院校教师与行业从业者组成，全国数百所高校、近千部作品参评。\n\n这是我第一次用 AI 把乡土题材做成完整叙事：先确定情绪与镜头节奏，再反向设计 prompt，最后用剪辑把生成的素材缝成一个完整的故事。",
       "gallery": [],
-      "role": "作者",
-      "collaborators": "",
-      "platform": "《西北大学现代学院报》副刊",
+      "role": "独立完成：编剧 / 分镜 / AIGC 生成 / 剪辑",
+      "collaborators": "指导：蒋睿萍",
+      "platform": "新西部大学生青年影像展",
       "links": [],
       "awards": [
         {
-          "name": "校园文学奖",
-          "level": "散文组三等奖",
-          "tier": "bronze",
-          "rank": "校级",
-          "issuer": "西北大学现代学院团委",
-          "date": "2024-11",
+          "level": "AIGC 最佳叙事影像",
+          "tier": "gold",
+          "name": "新西部大学生青年影像展",
+          "rank": "国家级",
+          "date": "2026-06",
+          "issuer": "新西部大学生青年影像展组委会",
           "certificate": "",
           "showTag": true,
           "showCertificate": false
@@ -206,151 +116,387 @@
       ]
     },
     {
-      "id": "brand-film",
-      "title": "一杯咖啡的 24 小时",
+      "id": "beauty-unboxed",
+      "title": "《BEAUTY UNBOXED》",
       "type": "video",
-      "category": "品牌短片",
-      "date": "2025-08",
-      "summary": "为社区咖啡馆拍的 90 秒品牌短片，实习期间独立完成。",
-      "cover": "uploads/demo/cover-brand.svg",
+      "category": "英语短视频",
+      "date": "2025-12",
+      "summary": "外研社·国才杯校赛银奖、陕西省赛道铜奖；独立完成的英语短视频。",
+      "cover": "",
       "tags": [
-        "商业",
-        "实习"
+        "短视频",
+        "国际传播",
+        "英语"
       ],
       "featured": true,
       "hidden": false,
-      "video": {
-        "input": "BV1GJ411x7h7",
-        "bvid": "BV1GJ411x7h7",
-        "aid": "",
-        "cid": "",
-        "page": 1
-      },
-      "body": "从凌晨五点的烘焙，到深夜最后一位客人离开。客户要求「不要拍成广告」，所以我们把镜头交给了店里的人。",
+      "video": {},
+      "body": "以「BEAUTY UNBOXED」为题的英语短视频，独立完成脚本、拍摄与剪辑，参加外研社·国才杯系列赛事。\n\n2025 年 12 月获校赛银奖，并进入陕西省赛道获铜奖。外研社·国才杯是教育部高校竞赛榜单外语类赛事，也是我目前赛事规格最高的一项成果。\n\n这次比赛让我确认了一件事：跨文化表达里，画面和节奏往往比语言更先抵达观众——这也是后来把方向收敛到「数智影像国际传播」的起点。",
       "gallery": [],
-      "role": "编导、剪辑、调色",
-      "collaborators": "示例文化传媒",
-      "platform": "品牌官方视频号",
+      "role": "独立完成：脚本 / 拍摄 / 剪辑",
+      "collaborators": "",
+      "platform": "外研社·国才杯",
+      "links": [],
+      "awards": [
+        {
+          "level": "陕西省赛道铜奖",
+          "tier": "bronze",
+          "name": "外研社·国才杯「理解当代中国」",
+          "rank": "省部级",
+          "date": "2025-12",
+          "issuer": "外语教学与研究出版社 · 北京外国语大学",
+          "certificate": "",
+          "showTag": true,
+          "showCertificate": false
+        }
+      ]
+    },
+    {
+      "id": "xunji-foping",
+      "title": "《寻迹佛坪》",
+      "type": "video",
+      "category": "72 小时 AIGC 短片",
+      "date": "2026-05",
+      "summary": "72 小时极限创作，一人承担 prompt / 美术 / 剪辑 / 音效，获校赛二等奖。",
+      "cover": "",
+      "tags": [
+        "AIGC",
+        "极限创作",
+        "短片",
+        "秦岭"
+      ],
+      "featured": true,
+      "hidden": false,
+      "video": {},
+      "body": "校级 72 小时 AIGC 短片极限创作赛作品。队伍「啊对对队」由我担任组长与第一负责人，一人承担 prompt、剪辑、美术与音效，AI 参与度约 80%，最终完成 1 分钟创意短片。\n\n2026 年 5 月 23 日获校赛二等奖。72 小时里最重要的是排序：先把叙事骨架定死，再把 AI 生成当作素材库——不然会在风格上无限试错，最后没时间剪。",
+      "gallery": [],
+      "role": "第一负责人：prompt / 美术 / 剪辑 / 音效",
+      "collaborators": "团队「啊对对队」",
+      "platform": "校级 72 小时 AIGC 短片极限创作赛",
+      "links": [],
+      "awards": [
+        {
+          "level": "二等奖",
+          "tier": "silver",
+          "name": "校级 72 小时 AIGC 短片极限创作赛",
+          "rank": "校级",
+          "date": "2026-05",
+          "issuer": "西北大学现代学院",
+          "certificate": "",
+          "showTag": true,
+          "showCertificate": false
+        }
+      ]
+    },
+    {
+      "id": "chengqiang-wenchuang",
+      "title": "《青砖衔岁月，城阙守长安》",
+      "type": "article",
+      "category": "文创赛事方案",
+      "date": "2026-07",
+      "summary": "西安城墙文化遗产活化创新全球文创赛事 · 省级三等奖（团队）。",
+      "cover": "",
+      "tags": [
+        "文创",
+        "文化遗产",
+        "西安城墙"
+      ],
+      "featured": false,
+      "hidden": false,
+      "video": {},
+      "body": "以西安城墙为对象的文创活化方案，参加西安城墙文化遗产活化创新全球文创赛事，团队作品。\n\n2026 年 7 月 30 日公示、10 月颁奖，获其他赛道三等奖。主办方为陕西省人居环境科学学会、西安交通大学与西安财经大学等。\n\n我做的是内容与视觉部分：从城墙的砖、门、阙里提炼可复用的图形语言，再落到可生产的文创载体上。",
+      "gallery": [],
+      "role": "团队成员：内容策划 / 视觉",
+      "collaborators": "指导：蒋睿萍",
+      "platform": "西安城墙文化遗产活化创新全球文创赛事",
+      "links": [],
+      "awards": [
+        {
+          "level": "三等奖",
+          "tier": "bronze",
+          "name": "西安城墙文化遗产活化创新全球文创赛事",
+          "rank": "省部级",
+          "date": "2026-07",
+          "issuer": "陕西省人居环境科学学会",
+          "certificate": "",
+          "showTag": true,
+          "showCertificate": false
+        }
+      ]
+    },
+    {
+      "id": "xueyuanjiang-poster",
+      "title": "学院奖命题海报：杰士邦 / 中国邮政 EMS",
+      "type": "article",
+      "category": "命题海报",
+      "date": "2026-08",
+      "summary": "两套命题海报创作，获中国大学生广告艺术节学院奖入围。",
+      "cover": "",
+      "tags": [
+        "海报",
+        "命题创作",
+        "学院奖"
+      ],
+      "featured": false,
+      "hidden": false,
+      "video": {},
+      "body": "中国大学生广告艺术节学院奖的两套命题创作：杰士邦「仿生皮系列」海报、中国邮政 EMS「校园创客系列」海报。\n\n2026 年 8 月获学院奖入围（入围非等级奖）。两套题分别考的是产品质感与品牌调性：一个要把「薄」讲得高级，一个要把「寄」讲得有人情味。",
+      "gallery": [],
+      "role": "独立完成：创意 / 平面",
+      "collaborators": "",
+      "platform": "中国大学生广告艺术节学院奖",
+      "links": [],
+      "awards": [
+        {
+          "level": "入围",
+          "tier": "merit",
+          "name": "中国大学生广告艺术节学院奖",
+          "rank": "国家级",
+          "date": "2026-08",
+          "issuer": "中国广告协会",
+          "certificate": "",
+          "showTag": true,
+          "showCertificate": false
+        }
+      ]
+    },
+    {
+      "id": "hancheng-sanxiaxiang",
+      "title": "韩城「文脉赓续 · 数智新生」实践影像",
+      "type": "video",
+      "category": "实践影像 / AIGC 系列",
+      "date": "2026-07",
+      "summary": "带队 10 天，产出 12 部短片、8 件文旅 AIGC 成片与 5 集秦腔访谈。",
+      "cover": "",
+      "tags": [
+        "三下乡",
+        "非遗",
+        "AIGC",
+        "纪录片",
+        "乡村振兴"
+      ],
+      "featured": true,
+      "hidden": false,
+      "video": {},
+      "body": "2026 年 7 月 9–19 日，带队赴陕西韩城开展「文脉赓续 · 数智新生」暑期三下乡实践。\n\n成果包括：文旅与 AIGC 成片 8 件以上（花椒广告、党家村、司马迁祠、芮国遗址等）、秦腔访谈 5 集、纪实短片《薪传》、6 米全民共创长卷；150 份问卷、12 人次访谈、13 篇新闻稿；与韩城市花椒产业发展中心签订校企合作与校外实习基地协议，成稿 1.8 万字调研论文。\n\n最有价值的一步是「发现错位」：问卷显示约 2/3 市民偏好国风短视频与数字文创，但通过短视频获取信息的比例偏低——于是把原定的图文报道改成 AIGC 短片批量生产，才有了后面 12 部成片的产出。",
+      "gallery": [],
+      "role": "实践团带队负责人：统筹 / AIGC 生产 / 剪辑",
+      "collaborators": "",
+      "platform": "西北大学现代学院团委 · 韩城市花椒产业发展中心",
       "links": [],
       "awards": []
     },
     {
-      "id": "solar-terms",
-      "title": "节气海报系列",
-      "type": "article",
-      "category": "平面设计",
-      "date": "2024-03",
-      "summary": "为校园公众号设计的二十四节气海报，这里选了 4 张。",
-      "cover": "uploads/demo/cover-poster.svg",
+      "id": "zhaosheng-video",
+      "title": "网络与新媒体 2026 专业招生视频",
+      "type": "video",
+      "category": "校内专业实践",
+      "date": "2026-05",
+      "summary": "参与策划与制作专业招生视频，完成分镜、特效镜头与多版成片。",
+      "cover": "",
       "tags": [
-        "海报",
-        "设计"
+        "招生宣传",
+        "校内实践",
+        "剪辑",
+        "特效"
       ],
-      "featured": true,
+      "featured": false,
       "hidden": false,
       "video": {},
-      "body": "每张海报都从一种校园里的植物出发：立春是图书馆门口的迎春，小满是操场边的枇杷。",
-      "gallery": [
-        {
-          "src": "uploads/demo/poster-1.svg",
-          "caption": "立春"
-        },
-        {
-          "src": "uploads/demo/poster-2.svg",
-          "caption": "小满"
-        },
-        {
-          "src": "uploads/demo/poster-3.svg",
-          "caption": "白露"
-        },
-        {
-          "src": "uploads/demo/poster-4.svg",
-          "caption": "冬至"
-        }
-      ],
-      "role": "设计",
+      "body": "网络与新媒体专业 2026 年招生宣传视频，校内专业实践项目。\n\n参与策划与制作，完成分镜、特效镜头与视频脚本，交付 5.21 / 5.26 版本及 1–3 部分成片。",
+      "gallery": [],
+      "role": "策划 / 分镜 / 特效 / 剪辑",
       "collaborators": "",
-      "platform": "西北大学现代学院融媒体中心公众号",
+      "platform": "西北大学现代学院 · 网络与新媒体专业",
+      "links": [],
+      "awards": []
+    },
+    {
+      "id": "daguangsai-2026",
+      "title": "大广赛两支商业广告：阿里云 / 娃哈哈",
+      "type": "video",
+      "category": "商业广告",
+      "date": "2026-06",
+      "summary": "阿里云、娃哈哈 AD 钙奶两支命题商业广告，2026 大广赛参赛作品。",
+      "cover": "",
+      "tags": [
+        "商业广告",
+        "大广赛",
+        "命题创作"
+      ],
+      "featured": false,
+      "hidden": false,
+      "video": {},
+      "body": "2026 年全国大学生广告艺术大赛的两支商业广告命题创作，6 月 8 日提交：\n\n· 阿里云：《能破千困，通义千问》\n· 娃哈哈 AD 钙奶：《陪你可爱到大，纯真快乐无价》（含线上 / 线下版本，附报名表与承诺书）\n\n两支片子都要在 30 秒里把「产品卖点」和「情绪」同时立住，是很好的商业命题训练。",
+      "gallery": [],
+      "role": "创意 / 脚本 / 剪辑",
+      "collaborators": "",
+      "platform": "全国大学生广告艺术大赛（大广赛）",
       "links": [],
       "awards": []
     }
   ],
   "honors": [
     {
-      "id": "h-scholarship",
-      "name": "2024—2025 学年",
-      "level": "国家奖学金",
+      "id": "h-career-plan",
+      "name": "第三届职业规划大赛（成长赛道）",
+      "level": "校赛金奖",
       "tier": "gold",
-      "rank": "国家级",
-      "issuer": "中华人民共和国教育部",
-      "date": "2025-11",
-      "certificate": "uploads/demo/certificate-3.svg",
+      "rank": "校级",
+      "issuer": "教育部 · 全国大学生职业规划大赛",
+      "date": "2026-01",
+      "certificate": "",
       "showTag": true,
-      "showCertificate": true,
-      "description": "全院共 2 人获得。",
+      "showCertificate": false,
+      "description": "以「新媒体视频设计师（文化传播＋品牌叙事）」参赛，获校级最高奖；一年后方向收敛为「文化译影人」。",
       "workId": "",
       "hidden": false
     },
     {
-      "id": "h-cadre",
-      "name": "2023—2024 学年",
-      "level": "优秀学生干部",
-      "tier": "merit",
+      "id": "h-tiaozhanbei",
+      "name": "第十三届「挑战杯」陕西省大学生创业计划竞赛",
+      "level": "校赛三等奖",
+      "tier": "bronze",
       "rank": "校级",
-      "issuer": "西北大学现代学院",
-      "date": "2024-05",
+      "issuer": "共青团陕西省委",
+      "date": "2026-09",
       "certificate": "",
       "showTag": true,
       "showCertificate": false,
-      "description": "",
+      "description": "团队作品《粘连红色，筑梦匠心》——长征精神引领下的非遗糜粘画文创赋能乡村振兴；证书办理中。",
+      "workId": "",
+      "hidden": false
+    },
+    {
+      "id": "h-fltrp-short",
+      "name": "2026 外研社·国才杯「理解当代中国」英语组短视频",
+      "level": "校赛铜奖",
+      "tier": "bronze",
+      "rank": "校级",
+      "issuer": "外语教学与研究出版社",
+      "date": "2026-10",
+      "certificate": "",
+      "showTag": true,
+      "showCertificate": false,
+      "description": "与同学合作完成，指导：刘思齐。",
       "workId": "",
       "hidden": false
     }
   ],
   "experiences": [
     {
-      "id": "e-media",
-      "scope": "campus",
-      "org": "西北大学现代学院融媒体中心",
-      "role": "视频部部长",
-      "start": "2023-09",
-      "end": "",
-      "location": "",
-      "summary": "负责视频部 20 人团队的选题、排期与成片审核。",
-      "highlights": [
-        "主导迎新季系列短片，全网播放 50 万+",
-        "建立素材库与剪辑规范，交片周期缩短约 30%",
-        "带教 12 名新成员完成第一支独立作品"
-      ],
-      "link": "",
-      "hidden": false
-    },
-    {
-      "id": "e-volunteer",
+      "id": "e-hancheng",
       "scope": "external",
-      "org": "乡村美育支教团",
-      "role": "影像课志愿者",
-      "start": "2024-07",
-      "end": "2024-08",
-      "location": "云南",
-      "summary": "为当地小学生开设两周手机摄影课，带他们拍了一部 5 分钟的村庄短片。",
-      "highlights": [],
+      "role": "实践团带队负责人",
+      "org": "西北大学现代学院 · 赴韩城「文脉赓续 · 数智新生」实践团",
+      "start": "2026-07",
+      "end": "2026-07",
+      "location": "陕西韩城",
       "link": "",
+      "summary": "带队 10 天完成县域文旅与非遗的 AIGC 影像记录，产出 12 部短片、调研报告与校企合作。",
+      "highlights": [
+        "12 部成片 / 8 件以上文旅 AIGC / 5 集秦腔访谈",
+        "150 份问卷、12 人次访谈、13 篇新闻稿",
+        "签订校企合作与校外实习基地协议 2 份",
+        "1.8 万字调研论文与 6 米全民共创长卷"
+      ],
       "hidden": false
     },
     {
-      "id": "e-union",
-      "scope": "campus",
-      "org": "西北大学现代学院学生会",
-      "role": "宣传部干事",
-      "start": "2022-10",
-      "end": "2023-06",
-      "location": "",
-      "summary": "",
-      "highlights": [
-        "负责校园十佳歌手大赛的海报与推文"
-      ],
+      "id": "e-xiying",
+      "scope": "external",
+      "role": "剪辑助理",
+      "org": "陕西西影电影频道 · 视觉影像中心",
+      "start": "2026-07",
+      "end": "2026-08",
+      "location": "西安",
       "link": "",
+      "summary": "按影视工业流程完成 3 部成片剪辑，获频道实习鉴定表认可。",
+      "highlights": [
+        "独立剪辑 3 部成片：西部影视集团党课、西影创想车间讲座、Blackmagic URSA Cine Immersive 电影机实操培训",
+        "按工业标准重做流程，补齐协作规范与成片效率"
+      ],
+      "hidden": false
+    },
+    {
+      "id": "e-xuelian",
+      "scope": "external",
+      "role": "实训生",
+      "org": "陕西省学生联合会 · 新闻媒体中心",
+      "start": "2026-10",
+      "end": "",
+      "location": "西安",
+      "link": "",
+      "summary": "经学校推荐进入省学联新闻媒体中心实训，参与官方新媒体内容生产。",
+      "highlights": [
+        "已发布抖音作品 2 件",
+        "负责选题与内容制作"
+      ],
+      "hidden": false
+    },
+    {
+      "id": "e-yanan",
+      "scope": "external",
+      "role": "实践成员（采访拍摄）",
+      "org": "「到延安去 · 三秦学子圣地行」大思政课实践",
+      "start": "2025-12",
+      "end": "2025-12",
+      "location": "延安",
+      "link": "",
+      "summary": "赴延安开展主题实践与采访拍摄，留存完整拍摄素材。",
+      "highlights": [
+        "完成采访与拍摄",
+        "留存大疆、相机与采访素材"
+      ],
+      "hidden": false
+    },
+    {
+      "id": "e-football",
+      "scope": "external",
+      "role": "志愿者",
+      "org": "2026 中甲联赛 / 足协杯 陕西赛区",
+      "start": "2026-04",
+      "end": "2026-04",
+      "location": "西安",
+      "link": "",
+      "summary": "中国足球职业赛事陕西赛区志愿服务，负责现场执行。",
+      "highlights": [
+        "陕西省足协 · 西安公安监制赛事",
+        "持志愿者证参与现场服务"
+      ],
+      "hidden": false
+    },
+    {
+      "id": "e-student-union",
+      "scope": "campus",
+      "role": "组织建设部负责人（2026.9 起）· 文体部干事",
+      "org": "西北大学现代学院学生会",
+      "start": "2025-09",
+      "end": "",
+      "location": "西安",
+      "link": "",
+      "summary": "从文体部干事到组织建设部负责人，统筹校内赛事、学代会与学生会改革。",
+      "highlights": [
+        "策划推动「紫香槐杯」篮球联赛、校乒羽联赛",
+        "参与第八次学代会、第九届影像展分竞赛单元",
+        "负责年度招新与学生会改革"
+      ],
+      "hidden": false
+    },
+    {
+      "id": "e-monitor",
+      "scope": "campus",
+      "role": "班长",
+      "org": "网络与新媒体 2501 班",
+      "start": "2025-09",
+      "end": "",
+      "location": "西安",
+      "link": "",
+      "summary": "负责班级日常组织与活动动员。",
+      "highlights": [
+        "组织校春季运动会报名，撰写通讯 / 加油稿 12 篇以上",
+        "第八次学代会文学院第三代表团学生代表、大会计票人"
+      ],
       "hidden": false
     }
   ]
