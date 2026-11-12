@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>作品集后台</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/award.css">
+  <link rel="stylesheet" href="admin.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <div class="connect" id="connect"><p class="connect__loading">正在载入…</p></div>
+
+  <div class="app" id="app" hidden>
+    <aside class="side">
+      <div class="side__brand">作品集后台</div>
+      <nav class="side__nav" id="nav" aria-label="后台导航">
+        <button type="button" data-view="works">作品</button>
+        <button type="button" data-view="honors">荣誉奖项</button>
+        <button type="button" data-view="experiences">实践经历</button>
+        <button type="button" data-view="profile">个人介绍</button>
+        <button type="button" data-view="site">网站设置</button>
+        <button type="button" data-view="data">连接与数据</button>
+      </nav>
+      <div class="side__foot">
+        <p class="side__conn" id="conn"></p>
+        <a class="side__site" href="../" target="_blank" rel="noopener">打开网站</a>
+      </div>
+    </aside>
+    <main class="main">
+      <header class="bar">
+        <h1 id="view-title"></h1>
+        <span class="bar__state" id="dirty-state" aria-live="polite"></span>
+        <a class="btn btn--ghost" id="preview-btn" href="../index.html?preview=1" target="_blank" rel="noopener" title="在新标签页查看包含未发布修改的网站">预览</a>
+        <button type="button" class="btn btn--primary" id="save-btn" title="Ctrl/⌘ + S">发布</button>
+      </header>
+      <div class="view" id="view"></div>
+    </main>
+  </div>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+</body>
+</html>

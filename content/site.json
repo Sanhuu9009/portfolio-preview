@@ -1,0 +1,401 @@
+{
+  "version": 1,
+  "updatedAt": "2026-11-11T08:00:00.000Z",
+  "site": {
+    "title": "党文龙 Aetheris · 作品集",
+    "description": "党文龙（Aetheris）的个人作品集：纪录短片、图文专题与文字作品，以及获奖与实践经历。",
+    "favicon": "",
+    "accent": "#3ad6c5",
+    "footer": "© 2026 党文龙 Aetheris　作品未经许可请勿转载",
+    "sections": {
+      "about": true,
+      "works": true,
+      "honors": true,
+      "experience": true,
+      "contact": true
+    },
+    "featuredLimit": 5,
+    "mergeWorkAwards": true,
+    "honorsOrder": "tier",
+    "effects": {
+      "intro": true,
+      "particles": true,
+      "cursor": true,
+      "shader": true,
+      "smooth": true
+    }
+  },
+  "profile": {
+    "name": "党文龙",
+    "nameEn": "Aetheris",
+    "avatar": "uploads/demo/avatar.svg",
+    "tagline": "用镜头记录城市里不被注意的角落，也用文字留住它们。",
+    "roles": [
+      "纪录片导演",
+      "剪辑",
+      "新媒体编辑",
+      "写作者"
+    ],
+    "school": "示例大学",
+    "major": "数字媒体艺术",
+    "grade": "2022 级本科",
+    "location": "上海",
+    "email": "hello@example.com",
+    "bio": "我是数字媒体艺术专业的大四学生，主要做纪录短片和图文专题。\n\n大一加入校融媒体中心后，我从扛三脚架的场务做到了视频部部长，三年里参与了 40 多支校园视频的拍摄与剪辑。课外我更喜欢拍普通人：菜市场的摊主、凌晨的环卫工、老小区里修了三十年自行车的师傅。\n\n**我相信好的作品来自足够长时间的在场。** 目前正在准备毕业设计，一部关于城市更新中老街坊的纪录片。",
+    "skills": [
+      "Premiere Pro",
+      "DaVinci Resolve 调色",
+      "After Effects",
+      "纪录片采访",
+      "公众号排版",
+      "Photoshop",
+      "文案写作"
+    ],
+    "education": [
+      {
+        "school": "示例大学",
+        "major": "数字媒体艺术",
+        "degree": "本科",
+        "start": "2022-09",
+        "end": "2026-06",
+        "note": "GPA 3.8 / 4.0，专业排名前 5%"
+      }
+    ],
+    "socials": [
+      {
+        "platform": "bilibili",
+        "label": "@Aetheris",
+        "url": "https://space.bilibili.com/"
+      },
+      {
+        "platform": "xiaohongshu",
+        "label": "党文龙 Aetheris",
+        "url": "https://www.xiaohongshu.com/"
+      },
+      {
+        "platform": "wechat",
+        "label": "公众号：夏天的取景框",
+        "url": ""
+      }
+    ],
+    "resume": ""
+  },
+  "works": [
+    {
+      "id": "city-folds",
+      "title": "城市褶皱",
+      "type": "video",
+      "category": "纪录短片",
+      "date": "2025-05",
+      "summary": "拆迁前最后一个月，老街上的五户人家。片长 18 分钟。",
+      "cover": "uploads/demo/cover-city.svg",
+      "tags": [
+        "纪录片",
+        "城市更新",
+        "毕业设计"
+      ],
+      "featured": true,
+      "hidden": false,
+      "video": {
+        "input": "BV1GJ411x7h7",
+        "bvid": "BV1GJ411x7h7",
+        "aid": "",
+        "cid": "",
+        "page": 1
+      },
+      "body": "2024 年冬天，学校后面的老街贴出了征收公告。我和两位同学用了一个月，每天早上六点去街口，跟拍了五户人家搬走前的日子。\n\n## 创作过程\n\n- 前期调研 2 周，访谈 17 户居民，最终确定 5 位主人公\n- 拍摄素材约 60 小时，剪辑历时 3 个月\n- 全片不用旁白，只保留人物自己的讲述\n\n> 「房子拆了，人还在，人在街就在。」——开修车铺的周师傅\n\n（示例视频，请在后台替换为你自己的 B 站视频。）",
+      "gallery": [],
+      "role": "导演、摄影、剪辑",
+      "collaborators": "王一然（录音）、陈墨（制片）",
+      "platform": "哔哩哔哩，播放量 12 万",
+      "links": [],
+      "awards": [
+        {
+          "name": "第十二届全国大学生影像创作大赛",
+          "level": "一等奖",
+          "tier": "gold",
+          "rank": "国家级",
+          "issuer": "全国大学生影像创作大赛组委会",
+          "date": "2025-10",
+          "certificate": "uploads/demo/certificate-1.svg",
+          "showTag": true,
+          "showCertificate": true
+        },
+        {
+          "name": "示例大学毕业影像展",
+          "level": "最佳纪录片",
+          "tier": "merit",
+          "rank": "校级",
+          "issuer": "示例大学艺术学院",
+          "date": "2025-06",
+          "certificate": "",
+          "showTag": true,
+          "showCertificate": false
+        }
+      ]
+    },
+    {
+      "id": "old-things",
+      "title": "旧物志：宿舍楼里的老物件",
+      "type": "article",
+      "category": "图文专题",
+      "date": "2024-12",
+      "summary": "采访了 12 位同学，拍下他们从家里带来的、舍不得扔的东西。",
+      "cover": "uploads/demo/cover-objects.svg",
+      "tags": [
+        "公众号",
+        "人物",
+        "摄影"
+      ],
+      "featured": true,
+      "hidden": false,
+      "video": {},
+      "body": "这是我在校融媒体公众号做的一期专题，阅读量 2.3 万，被学校官微转载。\n\n![宿舍书桌上的旧台灯](uploads/demo/cover-objects.svg)\n\n## 一盏台灯\n\n小雨的台灯是她外公修过三次的。灯罩的裂缝用胶布缠着，开关要按两下才亮。\n她说：「每次按第二下的时候，都觉得外公在旁边。」\n\n## 一本字典\n\n阿杰的《新华字典》是 1998 年版，扉页上写着他爸爸的名字。",
+      "gallery": [],
+      "role": "策划、采访、摄影、排版",
+      "collaborators": "",
+      "platform": "示例大学融媒体中心公众号",
+      "links": [
+        {
+          "label": "阅读原文",
+          "url": "https://mp.weixin.qq.com/"
+        }
+      ],
+      "awards": [
+        {
+          "name": "省大学生新媒体创意大赛",
+          "level": "二等奖",
+          "tier": "silver",
+          "rank": "省部级",
+          "issuer": "省教育厅",
+          "date": "2025-04",
+          "certificate": "uploads/demo/certificate-2.svg",
+          "showTag": true,
+          "showCertificate": true
+        }
+      ]
+    },
+    {
+      "id": "last-bus",
+      "title": "夏天的最后一班公交",
+      "type": "text",
+      "category": "散文",
+      "date": "2024-08",
+      "summary": "在 46 路末班车上坐到终点，一个关于告别的晚上。",
+      "cover": "",
+      "tags": [
+        "散文",
+        "城市"
+      ],
+      "featured": true,
+      "hidden": false,
+      "video": {},
+      "body": "46 路的末班车是十点四十分。\n\n我在这条线路上坐了三年，从来没有坐到过终点。那天晚上，司机师傅在倒数第二站回头看我，问：「小姑娘，终点站什么也没有，你确定吗？」\n\n我说确定。\n\n车窗外的路灯一盏一盏往后退，像是有人在把一整个夏天慢慢收起来。终点站真的什么也没有，只有一个调度室，一棵很大的香樟，和一只趴在台阶上的黄狗。\n\n师傅下车抽烟，说他明天就退休了。\n\n「开了二十六年，」他说，「最后一趟，拉了一个不下车的人。」\n\n---\n\n后来我常常想起那个晚上。我们总以为告别需要一个仪式，其实大多数告别只是：车到站了，灯关了，有人说了一句「回去吧」。",
+      "gallery": [],
+      "role": "作者",
+      "collaborators": "",
+      "platform": "《示例大学报》副刊",
+      "links": [],
+      "awards": [
+        {
+          "name": "校园文学奖",
+          "level": "散文组三等奖",
+          "tier": "bronze",
+          "rank": "校级",
+          "issuer": "示例大学团委",
+          "date": "2024-11",
+          "certificate": "",
+          "showTag": true,
+          "showCertificate": false
+        }
+      ]
+    },
+    {
+      "id": "brand-film",
+      "title": "一杯咖啡的 24 小时",
+      "type": "video",
+      "category": "品牌短片",
+      "date": "2025-08",
+      "summary": "为社区咖啡馆拍的 90 秒品牌短片，实习期间独立完成。",
+      "cover": "uploads/demo/cover-brand.svg",
+      "tags": [
+        "商业",
+        "实习"
+      ],
+      "featured": true,
+      "hidden": false,
+      "video": {
+        "input": "BV1GJ411x7h7",
+        "bvid": "BV1GJ411x7h7",
+        "aid": "",
+        "cid": "",
+        "page": 1
+      },
+      "body": "从凌晨五点的烘焙，到深夜最后一位客人离开。客户要求「不要拍成广告」，所以我们把镜头交给了店里的人。",
+      "gallery": [],
+      "role": "编导、剪辑、调色",
+      "collaborators": "示例文化传媒",
+      "platform": "品牌官方视频号",
+      "links": [],
+      "awards": []
+    },
+    {
+      "id": "solar-terms",
+      "title": "节气海报系列",
+      "type": "article",
+      "category": "平面设计",
+      "date": "2024-03",
+      "summary": "为校园公众号设计的二十四节气海报，这里选了 4 张。",
+      "cover": "uploads/demo/cover-poster.svg",
+      "tags": [
+        "海报",
+        "设计"
+      ],
+      "featured": true,
+      "hidden": false,
+      "video": {},
+      "body": "每张海报都从一种校园里的植物出发：立春是图书馆门口的迎春，小满是操场边的枇杷。",
+      "gallery": [
+        {
+          "src": "uploads/demo/poster-1.svg",
+          "caption": "立春"
+        },
+        {
+          "src": "uploads/demo/poster-2.svg",
+          "caption": "小满"
+        },
+        {
+          "src": "uploads/demo/poster-3.svg",
+          "caption": "白露"
+        },
+        {
+          "src": "uploads/demo/poster-4.svg",
+          "caption": "冬至"
+        }
+      ],
+      "role": "设计",
+      "collaborators": "",
+      "platform": "示例大学融媒体中心公众号",
+      "links": [],
+      "awards": []
+    },
+    {
+      "id": "copy-collection",
+      "title": "地铁灯箱文案合集",
+      "type": "text",
+      "category": "广告文案",
+      "date": "2025-07",
+      "summary": "实习期间为一家书店写的 6 条地铁灯箱文案，最终投放 3 条。",
+      "cover": "",
+      "tags": [
+        "文案",
+        "实习"
+      ],
+      "featured": false,
+      "hidden": false,
+      "video": {},
+      "body": "**一**\n下一站是终点，\n这本书还剩一半。\n\n**二**\n地铁不等人，\n但书会。\n\n**三**\n你低头看手机的时候，\n有人低头看了一整个世界。",
+      "gallery": [],
+      "role": "文案",
+      "collaborators": "",
+      "platform": "上海地铁 2 号线",
+      "links": [],
+      "awards": []
+    }
+  ],
+  "honors": [
+    {
+      "id": "h-scholarship",
+      "name": "2024—2025 学年",
+      "level": "国家奖学金",
+      "tier": "gold",
+      "rank": "国家级",
+      "issuer": "中华人民共和国教育部",
+      "date": "2025-11",
+      "certificate": "uploads/demo/certificate-3.svg",
+      "showTag": true,
+      "showCertificate": true,
+      "description": "全院共 2 人获得。",
+      "workId": "",
+      "hidden": false
+    },
+    {
+      "id": "h-cadre",
+      "name": "2023—2024 学年",
+      "level": "优秀学生干部",
+      "tier": "merit",
+      "rank": "校级",
+      "issuer": "示例大学",
+      "date": "2024-05",
+      "certificate": "",
+      "showTag": true,
+      "showCertificate": false,
+      "description": "",
+      "workId": "",
+      "hidden": false
+    }
+  ],
+  "experiences": [
+    {
+      "id": "e-media",
+      "scope": "campus",
+      "org": "示例大学融媒体中心",
+      "role": "视频部部长",
+      "start": "2023-09",
+      "end": "",
+      "location": "",
+      "summary": "负责视频部 20 人团队的选题、排期与成片审核。",
+      "highlights": [
+        "主导迎新季系列短片，全网播放 50 万+",
+        "建立素材库与剪辑规范，交片周期缩短约 30%",
+        "带教 12 名新成员完成第一支独立作品"
+      ],
+      "link": "",
+      "hidden": false
+    },
+    {
+      "id": "e-agency",
+      "scope": "external",
+      "org": "示例文化传媒有限公司",
+      "role": "内容策划实习生",
+      "start": "2025-06",
+      "end": "2025-09",
+      "location": "上海",
+      "summary": "参与 3 个品牌客户的社媒内容策划，独立完成一支品牌短片。",
+      "highlights": [
+        "撰写短视频脚本 30+ 条",
+        "负责的账号单月涨粉 1.2 万"
+      ],
+      "link": "",
+      "hidden": false
+    },
+    {
+      "id": "e-volunteer",
+      "scope": "external",
+      "org": "乡村美育支教团",
+      "role": "影像课志愿者",
+      "start": "2024-07",
+      "end": "2024-08",
+      "location": "云南",
+      "summary": "为当地小学生开设两周手机摄影课，带他们拍了一部 5 分钟的村庄短片。",
+      "highlights": [],
+      "link": "",
+      "hidden": false
+    },
+    {
+      "id": "e-union",
+      "scope": "campus",
+      "org": "示例大学学生会",
+      "role": "宣传部干事",
+      "start": "2022-10",
+      "end": "2023-06",
+      "location": "",
+      "summary": "",
+      "highlights": [
+        "负责校园十佳歌手大赛的海报与推文"
+      ],
+      "link": "",
+      "hidden": false
+    }
+  ]
+}

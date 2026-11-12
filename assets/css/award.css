@@ -1,0 +1,95 @@
+/* assets/css/award.css — 获奖麦穗徽章（前台与后台共用）
+   结构：<span class="award award--{sm|md|lg} tier-{gold|silver|bronze|merit}">
+           <svg class="laurel laurel--l"/> <span class="award__txt">…</span> <svg class="laurel laurel--r"/>
+         </span>
+   颜色由 --tier 决定，麦穗 SVG 使用 currentColor。
+   给 .award 加上 .is-grow 时，穗杆会描边生长、叶片依次长出（前台在进入视口时添加）。 */
+
+.award {
+  --tier: var(--gold, #f0b24a);
+  --tier-hi: color-mix(in srgb, var(--tier) 45%, #fff);
+  display: inline-flex;
+  align-items: center;
+  gap: .3em;
+  max-width: 100%;
+  color: var(--ink, #18201d);
+  text-align: center;
+  vertical-align: middle;
+}
+.tier-gold   { --tier: var(--gold, #f0b24a); }
+.tier-silver { --tier: var(--silver, #c9d1d9); }
+.tier-bronze { --tier: var(--bronze, #e08a57); }
+.tier-merit  { --tier: var(--accent-ink, var(--accent, #3ad6c5)); }
+
+.award .laurel {
+  flex: none;
+  height: 2.9em;
+  width: 1.45em;
+  color: var(--tier);
+  overflow: visible;
+  filter: drop-shadow(0 0 .35em color-mix(in srgb, var(--tier) 45%, transparent));
+}
+.award .laurel--r { transform: scaleX(-1); }
+
+.award__txt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  line-height: 1.3;
+}
+.award__level {
+  font-weight: 800;
+  letter-spacing: .04em;
+  color: var(--tier);
+  background: linear-gradient(105deg, var(--tier) 0 38%, var(--tier-hi) 50%, var(--tier) 62% 100%);
+  background-size: 260% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.award__name {
+  color: var(--ink-2, #3d4642);
+  font-size: .86em;
+  text-wrap: balance;
+}
+
+/* 悬停时金属光泽扫过 */
+@keyframes award-shine { from { background-position: 100% 0; } to { background-position: -60% 0; } }
+.award:hover .award__level,
+.is-shine .award__level { animation: award-shine 1.1s ease-out; }
+
+/* 生长动画 */
+@keyframes award-leaf { from { transform: scale(0); opacity: 0; } }
+@keyframes award-stem { from { stroke-dashoffset: 1; } }
+.award.is-grow .laurel .stem { stroke-dasharray: 1; animation: award-stem .7s cubic-bezier(.6, 0, .2, 1) both; }
+.award.is-grow .laurel .leaf { animation: award-leaf .45s cubic-bezier(.3, 1.5, .5, 1) both; animation-delay: calc(.15s + var(--n) * 40ms); }
+
+/* 卡片上的单行版本 */
+.award--sm { font-size: 13px; }
+.award--sm .laurel { height: 2.1em; width: 1.05em; filter: none; }
+.award--sm .award__txt { flex-direction: row; gap: .45em; align-items: baseline; }
+.award--sm .award__level { white-space: nowrap; }
+.award--sm .award__name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1em;
+}
+
+/* 荣誉墙 */
+.award--md { font-size: 15px; gap: .4em; }
+.award--md .laurel { height: 3.6em; width: 1.8em; }
+.award--md .award__level { font-size: 1.45em; }
+.award--md .award__name { font-size: .92em; max-width: 15em; }
+
+/* 作品详情页 */
+.award--lg { font-size: 17px; gap: .5em; }
+.award--lg .laurel { height: 4.2em; width: 2.1em; }
+.award--lg .award__level { font-size: 1.7em; }
+.award--lg .award__name { max-width: 22em; }
+
+@media (prefers-reduced-motion: reduce) {
+  .award .laurel .stem, .award .laurel .leaf, .award__level { animation: none !important; }
+}
