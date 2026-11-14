@@ -448,7 +448,8 @@ function renderHome(data) {
   fx.rotate($('.role-rot'), roles);
   fx.proximity($('.prox'));
   const hero = $('.hero');
-  if (hero && !fx.REDUCED) { // 向下滚动时首屏内容上移、淡出，名字放大
+  // Safari：滚动时不做首屏视差（每帧改 transform/opacity 会重绘整块首屏）
+  if (hero && !fx.REDUCED && !IS_SAFARI) {
     fx.onScroll(() => hero.style.setProperty('--hp', fx.clamp(scrollY / (innerHeight * 0.9), 0, 1).toFixed(3)));
   }
   $('.hgrid')?.addEventListener('click', (e) => {
@@ -461,9 +462,11 @@ function renderHome(data) {
   const mq = $('.marquee');
   if (mq) fx.marquee(mq);
   const bio = $('.bio');
-  if (bio) fx.scrub(bio);
+  // Safari：逐字高亮会把正文拆成几百个 span，并且每帧改 --p 让它们全部重算 + 过渡，卡顿主因之一
+  if (bio && !IS_SAFARI) fx.scrub(bio);
   const reel = $('.reel');
-  if (reel) fx.reel(reel);
+  // Safari：不做钉住横滚（滚动驱动大图层 transform），退回原生横向滚动
+  if (reel && !IS_SAFARI) fx.reel(reel);
   const grid = $('.hgrid');
   if (grid) fx.glowGrid(grid);
   const tl = $('.tl');
