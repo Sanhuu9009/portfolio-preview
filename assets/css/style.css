@@ -699,6 +699,22 @@ html.is-entering .wipe.is-out, .wipe.is-out { animation: wipe-out .7s var(--ease
    由 site.js 检测 WebKit 后给 <html> 加 .is-safari；其他浏览器完全不受影响。
    Safari 的实时毛玻璃、全屏渐变重绘、超大固定层动画明显比 Chrome 贵，这里统一降一档。 */
 html.is-safari .grain { animation: none; inset: 0; }
+/* 首屏大描边名字：逐字母 drop-shadow 是 Safari 上最贵的逐帧滤镜，直接关掉 */
+html.is-safari .prox .l { filter: none; transition: color .25s, -webkit-text-stroke-color .25s, transform .35s var(--ease); }
+html.is-safari .wrow__gold { filter: none; }
+html.is-safari .award .laurel { filter: none; }        /* 荣誉墙麦穗的 drop-shadow */
+html.is-safari .tile--photo img { filter: none; }      /* 照片的饱和度滤镜 */
+/* 无限动画：滚动环旋转、箭头浮动、录制点脉冲（脉冲动画的是 box-shadow，每帧重绘） */
+html.is-safari .brand__dot,
+html.is-safari .scroll-ring__txt,
+html.is-safari .scroll-ring__arrow svg { animation: none; }
+html.is-safari .brand__dot { box-shadow: none; }
+/* 大半径光晕阴影 */
+html.is-safari .btn--glow,
+html.is-safari .badge-award { box-shadow: none; }
+html.is-safari .tl__item.is-past::before,
+html.is-safari .hero__kicker .live::before { box-shadow: none; }
+/* 毛玻璃：Safari 滚动时要每帧重算背景模糊，改成接近不透明的底色 */
 html.is-safari .tile,
 html.is-safari .hcard,
 html.is-safari .tl__card,
@@ -710,12 +726,23 @@ html.is-safari .reader-tools,
 html.is-safari .lb,
 html.is-safari .pal,
 html.is-safari .nav {
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
 }
+html.is-safari .hd.is-scrolled,
+html.is-safari .toolbar::before { background: color-mix(in srgb, var(--bg) 94%, transparent); }
+html.is-safari .tile,
+html.is-safari .hcard,
+html.is-safari .tl__card,
+html.is-safari .nav { background: color-mix(in srgb, var(--surface-solid) 92%, transparent); }
+html.is-safari .badge-type,
+html.is-safari .play { background: rgba(0, 0, 0, .55); }
+/* 少一层合成层 */
+html.is-safari .hero__stage,
+html.is-safari .marquee__row,
+html.is-safari .reel__track { will-change: auto; }
 html.is-safari .ambient img,
 html.is-safari .work__media .glowbg { filter: blur(40px) saturate(1.4); }
-html.is-safari .marquee__row { will-change: auto; }
 
 /* ---------------- 触屏：工具栏吸顶不再跟顶栏联动 ----------------
    手机上顶栏不再自动隐藏（见 site.js），工具栏直接贴在顶栏下方；

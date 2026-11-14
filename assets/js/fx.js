@@ -324,6 +324,9 @@ export function particleName(canvas, text, { autoplay = true, simple = false } =
       P[k + 4] = pts[i * 2];
       P[k + 5] = pts[i * 2 + 1];
       if (i < oldN) { P[k] = old[k]; P[k + 1] = old[k + 1]; }
+      else if (simple) { // Safari：直接落在最终位置，不做飞入动画
+        P[k] = P[k + 4]; P[k + 1] = P[k + 5];
+      }
       else { // 首次：从四周散开的位置飞入
         const a = Math.random() * Math.PI * 2, d = (0.4 + Math.random() * 0.8) * W;
         P[k] = P[k + 4] + Math.cos(a) * d;

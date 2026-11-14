@@ -498,7 +498,7 @@ function startHero(data, entering) {
   if (!hero || !canvas) return;
   const name = (data.profile.name || data.site.title).replace(/\s+/g, ' ').trim();
   const fx_ = data.site.effects;
-  const useIntro = fx_.intro && !entering && !PREVIEW && !fx.REDUCED && !sessionStorage.getItem('intro-seen');
+  const useIntro = fx_.intro && !IS_SAFARI && !entering && !PREVIEW && !fx.REDUCED && !sessionStorage.getItem('intro-seen');
   if (fx_.particles && !fx.REDUCED) {
     particles = fx.particleName(canvas, name, { autoplay: !useIntro, simple: IS_SAFARI });
     if (particles) hero.classList.add('has-canvas');
