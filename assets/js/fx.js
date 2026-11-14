@@ -627,7 +627,7 @@ function hexRGB(v, fb) {
   return [(n >> 16) / 255, ((n >> 8) & 255) / 255, (n & 255) / 255];
 }
 
-export function aether(canvas) {
+export function aether(canvas, { still = false } = {}) {
   if (!canvas || REDUCED) return null;
   const gl = canvas.getContext('webgl', { alpha: false, antialias: false, depth: false, powerPreference: 'low-power' });
   if (!gl) return null;
@@ -665,25 +665,30 @@ export function aether(canvas) {
     gl.uniform3fv(U.bg, hexRGB(cs.getPropertyValue('--bg'), [0.03, 0.035, 0.045]));
     gl.uniform1f(U.k, light ? 0.55 : 0.72);
   };
-  const frame = (now) => {
-    raf = requestAnimationFrame(frame);
-    if (now - last < minFrame) return;
-    last = now;
+  const draw = (now) => {
     mx = lerp(mx, tx, 0.06); my = lerp(my, ty, 0.06);
     gl.uniform1f(U.t, (now - t0) / 1000);
     gl.uniform2f(U.m, mx * W, (1 - my) * H);
     gl.uniform1f(U.s, scrollY / innerHeight * 0.18);
     gl.drawArrays(gl.TRIANGLES, 0, 3);
   };
+  const frame = (now) => {
+    if (still) { draw(now); return; } // Safari：只画一帧静态背景，不做持续 rAF
+    raf = requestAnimationFrame(frame);
+    if (now - last < minFrame) return;
+    last = now;
+    draw(now);
+  };
   resize(); colors();
-  addEventListener('resize', debounce(resize, 100));
+  addEventListener('resize', debounce(() => { resize(); if (still) frame(performance.now()); }, 100));
   addEventListener('pointermove', (e) => { tx = e.clientX / innerWidth; ty = e.clientY / innerHeight; }, { passive: true });
-  document.addEventListener('themechange', colors);
+  document.addEventListener('themechange', () => { colors(); if (still) frame(performance.now()); });
   document.addEventListener('visibilitychange', () => {
+    if (still) return;
     if (document.hidden) { cancelAnimationFrame(raf); raf = 0; } else if (!raf) raf = requestAnimationFrame(frame);
   });
   canvas.addEventListener('webglcontextlost', (e) => { e.preventDefault(); cancelAnimationFrame(raf); canvas.remove(); document.documentElement.classList.remove('has-aether'); });
-  raf = requestAnimationFrame(frame);
+  if (still) frame(performance.now()); else raf = requestAnimationFrame(frame);
   document.documentElement.classList.add('has-aether');
   return { colors };
 }

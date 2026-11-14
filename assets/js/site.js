@@ -21,6 +21,13 @@ let draftShown = false;
 let particles = null;
 let palette = null;
 
+// WebKit/Safari 识别：桌面 Safari、iOS 上所有浏览器（Chrome/Firefox 在 iOS 也是 WebKit）
+// 只用来在 Safari 上做降级，别的浏览器行为完全不变。
+const UA = navigator.userAgent;
+const IS_IOS = /iP(hone|ad|od)/.test(UA) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+const IS_SAFARI = IS_IOS || (/Safari\//.test(UA) && !/Chrome\/|Chromium\/|CriOS\/|Edg\/|OPR\//.test(UA));
+if (IS_SAFARI) document.documentElement.classList.add('is-safari');
+
 const I = (d, extra = '') => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"${extra}>${d}</svg>`;
 const ICON = {
   play: '<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2 1l7 4-7 4z" fill="currentColor"/></svg>',
@@ -164,7 +171,9 @@ function renderHeader(data) {
     const y = scrollY;
     const max = document.documentElement.scrollHeight - innerHeight;
     hd.classList.toggle('is-scrolled', y > 12);
-    if (!nav.classList.contains('open')) hd.classList.toggle('is-hidden', y > 240 && y > lastY + 2);
+    // 触屏设备不自动隐藏顶栏：手机上来回滑动会反复触发「隐藏→显示」，
+    // 作品页工具栏为了避让顶栏会在 padding 上做补偿，一隐藏一显示搜索框就会上下抽动。
+    if (fx.FINE && !nav.classList.contains('open')) hd.classList.toggle('is-hidden', y > 240 && y > lastY + 2);
     if (y < lastY - 2) hd.classList.remove('is-hidden');
     lastY = y;
     bar.style.setProperty('--sp', max > 0 ? (y / max).toFixed(4) : 0);
@@ -810,8 +819,13 @@ async function main() {
   if (draftShown) document.body.insertAdjacentHTML('beforeend', '<div class="preview-bar" role="status">预览模式：显示的是后台里还没发布的修改</div>');
   palette = initPalette(data, { href, workHref, onHome: PAGE === 'home' });
   const ef = data.site.effects;
-  if (!(ef.shader && fx.aether($('.aether')))) { $('.aether')?.remove(); fx.spotlight($('.spot')); }
-  if (ef.smooth) fx.smoothScroll();
+  // Safari / WebKit 专项降级：背景只画一帧、不做逐帧追光、不用滚轮惯性接管。
+  // 其他浏览器走原来的逻辑，行为不变。
+  if (!(ef.shader && fx.aether($('.aether'), { still: IS_SAFARI }))) {
+    $('.aether')?.remove();
+    if (!IS_SAFARI) fx.spotlight($('.spot'));
+  }
+  if (ef.smooth && !IS_SAFARI) fx.smoothScroll();
   if (ef.cursor) fx.cursor();
   fx.hoverScramble();
   fx.magnetic();
