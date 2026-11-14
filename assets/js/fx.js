@@ -386,20 +386,35 @@ export function particleName(canvas, text, { autoplay = true, simple = false } =
     addEventListener('scroll', () => { cachedRect = null; }, { passive: true });
     addEventListener('resize', () => { cachedRect = null; }, { passive: true });
   }
-  const move = (e) => {
-    const r = rectNow();
-    mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top; mouse.on = true;
-    // Safari：鼠标停住 450ms 后停止逐帧重绘，只有继续移动时才再次唤醒
+  const wake = () => {
+    mouse.on = true;
     if (simple) {
       clearTimeout(hoverTimer);
       hoverTimer = setTimeout(() => { mouse.on = false; kick(); }, 450);
     }
     kick();
   };
-  host.addEventListener('pointermove', move, { passive: true });
-  host.addEventListener('pointerdown', move, { passive: true });
-  host.addEventListener('pointerleave', () => { mouse.on = false; clearTimeout(hoverTimer); kick(); });
-  host.addEventListener('pointercancel', () => { mouse.on = false; clearTimeout(hoverTimer); kick(); });
+  const move = (e) => {
+    const r = rectNow();
+    mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top;
+    wake();
+  };
+  if (simple) {
+    // Safari：监听 window 再判断是否落在画布矩形内，避免子元素/伪元素挡住 pointermove 而完全没反应
+    const onMove = (e) => {
+      const r = rectNow();
+      const x = e.clientX - r.left, y = e.clientY - r.top;
+      if (x < 0 || y < 0 || x > r.width || y > r.height) return;
+      mouse.x = x; mouse.y = y; wake();
+    };
+    addEventListener('pointermove', onMove, { passive: true });
+    addEventListener('pointerdown', onMove, { passive: true });
+  } else {
+    host.addEventListener('pointermove', move, { passive: true });
+    host.addEventListener('pointerdown', move, { passive: true });
+    host.addEventListener('pointerleave', () => { mouse.on = false; clearTimeout(hoverTimer); kick(); });
+    host.addEventListener('pointercancel', () => { mouse.on = false; clearTimeout(hoverTimer); kick(); });
+  }
   whenVisible(canvas, (v) => { vis = v; kick(); }, '0px');
   addEventListener('resize', debounce(() => { if (build()) kick(); }, 200));
   document.addEventListener('themechange', () => { colors(); tick(); });

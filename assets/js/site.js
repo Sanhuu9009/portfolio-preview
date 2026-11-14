@@ -6,10 +6,10 @@
 import {
   TYPES, SOCIALS, esc, safeUrl, assetUrl, isPdf, fmtDate, fmtRange, normalize, collectHonors,
   biliEmbed, laurelSVG, awardBadge, plainText, countChars,
-} from './core.js';
-import { md } from './md.js';
-import * as fx from './fx.js';
-import { initPalette } from './palette.js';
+} from './core.js?v=20261114a';
+import { md } from './md.js?v=20261114a';
+import * as fx from './fx.js?v=20261114a';
+import { initPalette } from './palette.js?v=20261114a';
 
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
