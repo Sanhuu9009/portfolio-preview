@@ -273,7 +273,8 @@ export function particleName(canvas, text, { autoplay = true, simple = false } =
   let W = 0, H = 0, n = 0, size = 2, raf = 0, vis = true, playing = autoplay, fill = '#fff';
   let P = new Float32Array(0); // 每个粒子 6 个数：x y vx vy tx ty
   const mouse = { x: -1e4, y: -1e4, on: false };
-  // Safari 降级：粒子数更少、像素密度 1x、不响应指针（否则鼠标在首屏移动时会一直重绘）、最高 30fps
+  let cachedRect = null, hoverTimer = 0;
+  // Safari 降级：粒子数更少、像素密度 1x、最高 30fps；保留鼠标交互，但停手后会很快静止
   const maxPts = simple ? 2200 : 7000;
   const minFrame = simple ? 1000 / 30 : 0;
   let lastTick = 0;
@@ -333,6 +334,7 @@ export function particleName(canvas, text, { autoplay = true, simple = false } =
         P[k + 1] = P[k + 5] + Math.sin(a) * d * 0.5;
       }
     }
+    cachedRect = null;
     colors();
     return true;
   }
@@ -357,8 +359,9 @@ export function particleName(canvas, text, { autoplay = true, simple = false } =
         const dx = x - mouse.x, dy = y - mouse.y, d2 = dx * dx + dy * dy;
         if (d2 < R2) { const d = Math.sqrt(d2) || 1, f = (1 - d / R) * 5; vx += (dx / d) * f; vy += (dy / d) * f; }
       }
-      vx = (vx + (P[k + 4] - x) * 0.05) * 0.84;
-      vy = (vy + (P[k + 5] - y) * 0.05) * 0.84;
+      const damp = simple ? 0.8 : 0.84;
+      vx = (vx + (P[k + 4] - x) * 0.05) * damp;
+      vy = (vy + (P[k + 5] - y) * 0.05) * damp;
       x += vx; y += vy;
       P[k] = x; P[k + 1] = y; P[k + 2] = vx; P[k + 3] = vy;
       energy += vx * vx + vy * vy;
@@ -373,18 +376,30 @@ export function particleName(canvas, text, { autoplay = true, simple = false } =
   if (!playing) { // 片头期间先画出静止的名字，避免空白
     for (let i = 0; i < n; i++) { P[i * 6] = P[i * 6 + 4]; P[i * 6 + 1] = P[i * 6 + 5]; }
   }
+  // Safari 下用缓存的画布位置，避免每次 pointermove 都触发布局计算
+  const rectNow = () => {
+    if (!simple) return canvas.getBoundingClientRect();
+    if (!cachedRect) cachedRect = canvas.getBoundingClientRect();
+    return cachedRect;
+  };
+  if (simple) {
+    addEventListener('scroll', () => { cachedRect = null; }, { passive: true });
+    addEventListener('resize', () => { cachedRect = null; }, { passive: true });
+  }
   const move = (e) => {
-    const r = canvas.getBoundingClientRect();
+    const r = rectNow();
     mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top; mouse.on = true;
+    // Safari：鼠标停住 450ms 后停止逐帧重绘，只有继续移动时才再次唤醒
+    if (simple) {
+      clearTimeout(hoverTimer);
+      hoverTimer = setTimeout(() => { mouse.on = false; kick(); }, 450);
+    }
     kick();
   };
-  // Safari 降级：不接指针交互，首屏动画结束后就彻底静止，不会因为鼠标划过持续重绘
-  if (!simple) {
-    host.addEventListener('pointermove', move, { passive: true });
-    host.addEventListener('pointerdown', move, { passive: true });
-    host.addEventListener('pointerleave', () => { mouse.on = false; kick(); });
-    host.addEventListener('pointercancel', () => { mouse.on = false; kick(); });
-  }
+  host.addEventListener('pointermove', move, { passive: true });
+  host.addEventListener('pointerdown', move, { passive: true });
+  host.addEventListener('pointerleave', () => { mouse.on = false; clearTimeout(hoverTimer); kick(); });
+  host.addEventListener('pointercancel', () => { mouse.on = false; clearTimeout(hoverTimer); kick(); });
   whenVisible(canvas, (v) => { vis = v; kick(); }, '0px');
   addEventListener('resize', debounce(() => { if (build()) kick(); }, 200));
   document.addEventListener('themechange', () => { colors(); tick(); });
