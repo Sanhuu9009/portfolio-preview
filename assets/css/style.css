@@ -731,10 +731,14 @@ html.is-safari .nav {
 }
 html.is-safari .hd.is-scrolled,
 html.is-safari .toolbar::before { background: color-mix(in srgb, var(--bg) 94%, transparent); }
-html.is-safari .tile,
+/* 注意排除 .tile--cta：它本身是强调色渐变卡片，不能被这条实底覆盖掉 */
+html.is-safari .tile:not(.tile--cta),
 html.is-safari .hcard,
-html.is-safari .tl__card,
-html.is-safari .nav { background: color-mix(in srgb, var(--surface-solid) 92%, transparent); }
+html.is-safari .tl__card { background: color-mix(in srgb, var(--surface-solid) 92%, transparent); }
+html.is-safari .tile--cta {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 85%, transparent), color-mix(in srgb, var(--accent) 45%, var(--gold)));
+  color: var(--on-accent);
+}
 html.is-safari .badge-type,
 html.is-safari .play { background: rgba(0, 0, 0, .55); }
 /* 少一层合成层 */
