@@ -500,7 +500,7 @@ function startHero(data, entering) {
   const fx_ = data.site.effects;
   const useIntro = fx_.intro && !entering && !PREVIEW && !fx.REDUCED && !sessionStorage.getItem('intro-seen');
   if (fx_.particles && !fx.REDUCED) {
-    particles = fx.particleName(canvas, name, { autoplay: !useIntro });
+    particles = fx.particleName(canvas, name, { autoplay: !useIntro, simple: IS_SAFARI });
     if (particles) hero.classList.add('has-canvas');
   }
   if (useIntro) {

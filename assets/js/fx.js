@@ -267,12 +267,16 @@ export function marquee(section) {
 
 /* ---------------- 首屏：粒子组成的名字，被指针推开后弹回 ---------------- */
 
-export function particleName(canvas, text, { autoplay = true } = {}) {
+export function particleName(canvas, text, { autoplay = true, simple = false } = {}) {
   const ctx = canvas.getContext('2d');
   const host = canvas.parentElement;
   let W = 0, H = 0, n = 0, size = 2, raf = 0, vis = true, playing = autoplay, fill = '#fff';
   let P = new Float32Array(0); // 每个粒子 6 个数：x y vx vy tx ty
   const mouse = { x: -1e4, y: -1e4, on: false };
+  // Safari 降级：粒子数更少、像素密度 1x、不响应指针（否则鼠标在首屏移动时会一直重绘）、最高 30fps
+  const maxPts = simple ? 2200 : 7000;
+  const minFrame = simple ? 1000 / 30 : 0;
+  let lastTick = 0;
 
   function colors() {
     const cs = getComputedStyle(document.documentElement);
@@ -287,7 +291,7 @@ export function particleName(canvas, text, { autoplay = true } = {}) {
     const r = canvas.getBoundingClientRect();
     if (!r.width || !r.height) return false;
     W = r.width; H = r.height;
-    const dpr = Math.min(devicePixelRatio || 1, 2);
+    const dpr = Math.min(devicePixelRatio || 1, simple ? 1 : 2);
     canvas.width = Math.round(W * dpr);
     canvas.height = Math.round(H * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -304,11 +308,11 @@ export function particleName(canvas, text, { autoplay = true } = {}) {
     o.fillStyle = '#fff';
     o.fillText(text, 0, H / 2 + fs * 0.03);
     const data = o.getImageData(0, 0, off.width, off.height).data;
-    let gap = W < 640 ? 3 : 4, pts;
+    let gap = simple ? (W < 640 ? 4 : 6) : (W < 640 ? 3 : 4), pts;
     for (;;) {
       pts = [];
       for (let y = 0; y < off.height; y += gap) for (let x = 0; x < off.width; x += gap) if (data[(y * off.width + x) * 4 + 3] > 130) pts.push(x, y);
-      if (pts.length / 2 <= 7000 || gap >= 9) break;
+      if (pts.length / 2 <= maxPts || gap >= 9) break;
       gap++;
     }
     size = Math.max(1.5, gap * 0.58);
@@ -330,8 +334,14 @@ export function particleName(canvas, text, { autoplay = true } = {}) {
     return true;
   }
 
-  function tick() {
+  function tick(now) {
     raf = 0;
+    if (now != null) {
+      if (minFrame && now - lastTick < minFrame) { raf = requestAnimationFrame(tick); return; }
+      lastTick = now;
+    } else {
+      lastTick = performance.now();
+    }
     ctx.clearRect(0, 0, W, H);
     ctx.fillStyle = fill;
     ctx.beginPath();
@@ -365,10 +375,13 @@ export function particleName(canvas, text, { autoplay = true } = {}) {
     mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top; mouse.on = true;
     kick();
   };
-  host.addEventListener('pointermove', move, { passive: true });
-  host.addEventListener('pointerdown', move, { passive: true });
-  host.addEventListener('pointerleave', () => { mouse.on = false; kick(); });
-  host.addEventListener('pointercancel', () => { mouse.on = false; kick(); });
+  // Safari 降级：不接指针交互，首屏动画结束后就彻底静止，不会因为鼠标划过持续重绘
+  if (!simple) {
+    host.addEventListener('pointermove', move, { passive: true });
+    host.addEventListener('pointerdown', move, { passive: true });
+    host.addEventListener('pointerleave', () => { mouse.on = false; kick(); });
+    host.addEventListener('pointercancel', () => { mouse.on = false; kick(); });
+  }
   whenVisible(canvas, (v) => { vis = v; kick(); }, '0px');
   addEventListener('resize', debounce(() => { if (build()) kick(); }, 200));
   document.addEventListener('themechange', () => { colors(); tick(); });
